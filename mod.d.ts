@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2026 The Stdlib Authors.
@@ -16,17 +16,28 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { float64ndarray, boolndarray } from '@stdlib/types/ndarray';
 
 /**
-* Cumulatively test whether at least one element in a one-dimensional double-precision floating-point ndarray is truthy.
+* Cumulatively tests whether at least one element in a one-dimensional double-precision floating-point ndarray is truthy.
 *
-* @module @stdlib/blas-ext-base-ndarray-dcuany
+* ## Notes
+*
+* -   The function expects the following ndarrays:
+*
+*     -   a one-dimensional input ndarray.
+*     -   a one-dimensional output ndarray.
+*
+* @param arrays - array-like object containing ndarrays
+* @returns output ndarray
 *
 * @example
 * var Float64Vector = require( '@stdlib/ndarray-vector-float64' );
 * var BooleanVector = require( '@stdlib/ndarray-vector-bool' );
-* var dcuany = require( '@stdlib/blas-ext-base-ndarray-dcuany' );
 *
 * var x = new Float64Vector( [ 0.0, 0.0, 1.0, 0.0 ] );
 * var out = new BooleanVector( 4 );
@@ -37,12 +48,9 @@
 * var bool = ( z === out );
 * // returns true
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function dcuany( arrays: [ float64ndarray, boolndarray ] ): boolndarray;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = dcuany;
